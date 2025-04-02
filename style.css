@@ -1,0 +1,689 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #f7f7f7; /* Light background */
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* For smooth scrolling */
+}
+
+/* Header Styles */
+header {
+    background-color: #222; /* Dark header */
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Fixed navbar */
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #ccc;
+}
+
+.contact-button {
+    background-color: #cc1818; /* Red contact button */
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 2rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #a51212;
+}
+
+/* Hero Section Styles */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.hero-text h1 .highlight {
+    color: #ff6600; /* Orange highlight */
+}
+
+.hero-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.hero-buttons button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.hero-buttons .hire-me {
+    background-color: #222;
+    color: #fff;
+}
+
+.hero-buttons .cv {
+    background-color: #ff6600; /* Orange CV button */
+    color: #fff;
+}
+
+.hero-buttons button:hover {
+    opacity: 0.9;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 15%;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section Styles */
+.about {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #cc1818;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.skills h3, .education h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+
+.skill-bars {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the circles horizontally */
+    gap: 2rem; /* Increased gap for better spacing */
+}
+
+.skill-bar {
+    position: relative;
+    width: 120px; /* Increased size of the circle */
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-align: center; /* Center the skill bar within its container */
+}
+
+.skill-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #ff6600;
+    clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 50%);
+    transform: rotate(0deg);
+    transition: transform 1s ease;
+}
+
+.skill-bar-fill::after {
+    color: #fff;
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.skill-title {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    width: 100%;
+}
+
+.skill-percentage {
+    display: none;
+}
+
+
+.education ul {
+    list-style: none;
+    padding: 0;
+}
+
+.education li {
+    margin-bottom: 0.8rem;
+}
+
+.education li strong {
+    font-weight: bold;
+}
+
+/* Services Section Styles */
+.services {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #cc1818;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-item {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-0.5rem);
+}
+
+.service-item i {
+    font-size: 2rem;
+    color: #ff6600;
+    margin-bottom: 1rem;
+}
+
+.service-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.service-item p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Projects Section Styles */
+.projects {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #cc1818;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-item {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-0.5rem);
+}
+
+
+.project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.project-item h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0.5rem;
+    color: #333;
+    text-align: left;
+}
+
+.project-item p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0 0.5rem 1rem 0.5rem;
+    text-align: left;
+}
+
+.project-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0.5rem 1.5rem 0.5rem;
+}
+
+.project-buttons a {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.project-buttons a:hover {
+    background-color: #cc5200;
+}
+
+/* Testimonials Section Styles */
+.testimonials {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #cc1818;
+}
+
+.testimonial-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimonial-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+    color: #555;
+}
+
+.testimonial-item .author {
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: right;
+    color: #333;
+}
+
+/* GitHub Section Styles */
+.github-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.github-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #cc1818;
+}
+
+.github-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.github-link {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.github-link:hover {
+    background-color: #222;
+}
+
+
+/* Contact Section Styles */
+.contact-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.contact-heading h2 {
+    color: #cc1818;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.contact-info h3 {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.contact-info p {
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #cc1818;
+    margin-bottom: 0.5rem;
+}
+
+.info-item h4 {
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.info-item p {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.info-item a {
+    color: #555;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.info-item a:hover{
+    color: #ff6600;
+}
+
+.contact-form-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff6600;
+}
+
+.form-group label {
+    position: absolute;
+    top: 0.75rem;
+    left: 1rem;
+    color: #aaa;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    background-color: transparent;
+    padding: 0;
+}
+
+.form-group input:focus + label,
+.form-group input:valid + label,
+.form-group textarea:focus + label,
+.form-group textarea:valid + label {
+    transform: translateY(-1.25rem) scale(0.8);
+    font-size: 0.8rem;
+    color: #ff6600;
+    background-color: #f9f9f9;
+    padding: 0 0.25rem;
+}
+
+
+.form-group textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.contact-form button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    width: fit-content;
+    align-self: center;
+}
+
+/* Section Background Colors */
+.hero { background-color: #f5f5f5; } /* Light Gray */
+.about { background-color: #e8f4fa; } /* Light Blue */
+.services { background-color: #fef3e7; } /* Light Orange */
+.projects { background-color: #eef7ea; } /* Light Green */
+.testimonials { background-color: #f3e8ff; } /* Light Purple */
+.contact-section { background-color: #fff5f5; } /* Light Pink */
+footer { background-color: #222; color: white; }
+.contact-form button:hover {
+    background-color: #cc5200;
+}
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-left: 0;
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        max-width: 80%;
+        margin-top: 2rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .services-list,
+    .project-list,
+    .testimonial-list,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons button {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-form {
+        gap: 0.5rem;
+    }
+    
+    .form-group input, .form-group textarea {
+        padding: 0.75rem;
+    }
+    
+    .form-group label {
+        top: 0.5rem;
+        left: 0.75rem;
+    }
+    
+    .form-group input:focus + label,
+    .form-group input:valid + label,
+    .form-group textarea:focus + label,
+    .form-group textarea:valid + label {
+        transform: translateY(-1rem) scale(0.7);
+        font-size: 0.7rem;
+        padding: 0 0.2rem;
+    }
+}
