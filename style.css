@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -5,61 +10,108 @@ body {
     color: #333;
     line-height: 1.6;
     scroll-behavior: smooth; /* For smooth scrolling */
+    
+}
+/* Section Background Colors */
+.hero { background-color: #f5f5f5; } /* Light Gray */
+.about { background-color: #e8f4fa; } /* Light Blue */
+.services { background-color: #fef3e7; } /* Light Orange */
+.projects { background-color: #eef7ea; } /* Light Green */
+.testimonials { background-color: #f3e8ff; } /* Light Purple */
+.contact-section { background-color: #fff5f5; } /* Light Pink */
+footer { background-color: #222; color: white; }
+.contact-form button:hover {
+    background-color: #cc5200;
 }
 
-/* Header Styles */
+/* header */
 header {
-    background-color: #222; /* Dark header */
+    background-color: #222;
     color: #fff;
     padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky; /* Fixed navbar */
+    
+    position: sticky;
     top: 0;
     z-index: 100;
-}
-
-nav {
+  }
+  
+  nav {
     display: flex;
     align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .logo {
     font-size: 1.8rem;
     font-weight: bold;
-}
-
-nav ul {
+  }
+  
+  /* Navigation Links */
+  .nav-links {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    margin-left: auto;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-nav ul li {
-    margin-left: 1.5rem;
-}
-
-nav ul li a {
+    gap: 1.5rem;
+  }
+  
+  .nav-links li a {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
+  }
+  
+  .nav-links a:hover {
     text-decoration: underline;
-    color: #ccc;
-}
+    color: #0b26f6;
+  }
+  
+  /* Hamburger Menu (hidden by default) */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    
+  }
+  
+  .menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+    transition: 0.3s;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .nav-links {
+      
+      position: absolute;
+      top: 50px; /* adjust based on header height */
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      background: #222;
+      display: none;      
+      text-align: center;
+      padding: 1rem 0;
+    }
+    
+    .nav-links li {
+      margin: 1rem 0;
+    }
+    
+    .menu-toggle {
+      display: flex;
+    }
+    
+    .nav-links.active {
+      display: flex;
+    }
+  }
+  
 
-.contact-button {
-    background-color: #cc1818; /* Red contact button */
+/* .contact-button {
+    background-color: #cc1818; 
     color: #fff;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -69,11 +121,11 @@ nav ul li a:hover {
     margin-left: 2rem;
     font-size: 1rem;
     transition: background-color 0.3s ease;
-}
+} */
 
-.contact-button:hover {
+/* .contact-button:hover {
     background-color: #a51212;
-}
+} */
 
 /* Hero Section Styles */
 .hero {
@@ -144,102 +196,20 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* About Section Styles */
-.about {
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 2rem;
-}
-
-.about h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #cc1818;
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.skills h3, .education h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-
-.skill-bars {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the circles horizontally */
-    gap: 2rem; /* Increased gap for better spacing */
-}
-
-.skill-bar {
-    position: relative;
-    width: 120px; /* Increased size of the circle */
-    height: 120px;
-    border-radius: 50%;
-    background-color: #ddd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-    text-align: center; /* Center the skill bar within its container */
-}
-
-.skill-bar-fill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: #ff6600;
-    clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 50%);
-    transform: rotate(0deg);
-    transition: transform 1s ease;
-}
-
-.skill-bar-fill::after {
-    color: #fff;
-    font-size: 1rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-
-.skill-title {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    color: #333;
-    text-align: center;
-    width: 100%;
-}
-
-.skill-percentage {
-    display: none;
-}
-
-
-.education ul {
-    list-style: none;
-    padding: 0;
-}
-
-.education li {
-    margin-bottom: 0.8rem;
-}
-
-.education li strong {
+.hero-social-icons {    
+    
+    color: #cd0c0c;
+    padding: 2px;
+    text-decoration: none;
+    transition: color 0.3s ease;
     font-weight: bold;
+    font-size: 20px;
 }
+
+.hero-social-icons a:hover {
+    color: #ff6600;
+}
+
 
 /* Services Section Styles */
 .services {
@@ -367,7 +337,7 @@ nav ul li a:hover {
     background-color: #cc5200;
 }
 
-/* Testimonials Section Styles */
+/* Testimonials Section */
 .testimonials {
     max-width: 1200px;
     margin: 4rem auto;
@@ -377,10 +347,11 @@ nav ul li a:hover {
 
 .testimonials h2 {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.1rem;
     color: #cc1818;
 }
 
+/*Testimonials list */
 .testimonial-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -404,6 +375,78 @@ nav ul li a:hover {
     text-align: right;
     color: #333;
 }
+
+/* Testimonial Submission Form */
+.testimonial-container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+ }
+
+.testimonial-container h3 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.testimonial-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.testimonial-form input, 
+.testimonial-form textarea, 
+.testimonial-form select, 
+.testimonial-form button {   
+    padding: 10px;    
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Profile Upload Input */
+/* Hide default file input */
+#profile {
+    display: none;
+}
+
+/* Custom Label Button */
+.file-label {
+    display: block;
+    
+    padding: 10px;
+    background: #f0f0f0;
+    color: #777;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.file-label:hover {
+    background: #e0e0e0;
+}
+
+ /* submit button */
+.testimonial-form button {
+    background: #0073e6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.testimonial-form button:hover {
+    background: #005bb5;
+}
+
 
 /* GitHub Section Styles */
 .github-section {
@@ -471,8 +514,8 @@ nav ul li a:hover {
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 2rem;
+    margin-bottom: 1rem;
 }
 
 .info-item {
@@ -584,27 +627,271 @@ nav ul li a:hover {
     align-self: center;
 }
 
-/* Section Background Colors */
-.hero { background-color: #f5f5f5; } /* Light Gray */
-.about { background-color: #e8f4fa; } /* Light Blue */
-.services { background-color: #fef3e7; } /* Light Orange */
-.projects { background-color: #eef7ea; } /* Light Green */
-.testimonials { background-color: #f3e8ff; } /* Light Purple */
-.contact-section { background-color: #fff5f5; } /* Light Pink */
-footer { background-color: #222; color: white; }
-.contact-form button:hover {
-    background-color: #cc5200;
-}
+
 
 
 
 /* Footer Styles */
 footer {
     background-color: #222;
-    color: #fff;
-    padding: 1rem;
+    color: #eee;
+    padding: 0.5rem;
     text-align: center;
+    font-size: 0.7rem;
+    line-height: 1.2;
+}
+
+.footer-content {
+    max-width: 1500px;
+    margin: 2.5rem auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 2rem;
+    font-size: 0.99rem;
+
+}
+
+.footer-section {
+    padding: 0.1rem;
+}
+
+.footer-brand {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    text-align: left;
+}
+
+.footer-brand h2 {
+    
+    margin-bottom: 0.1rem;
+}
+
+.footer-brand p {
+    
+    color: #bbb;
+    margin-bottom: 0.1rem;
+}
+
+.footer-nav {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    text-align: left;
+}
+
+
+.footer-tech {
+    grid-column: 4 / 4;
+    grid-row: 1;
+    text-align: left;
+}
+
+.footer-tech h3 {
+   
+    margin-bottom: 0.1rem;
+}
+
+.footer-tech p {
+    
+    margin-bottom: 0.1rem;
+}
+
+.footer-contact{
+    grid-column: 3 / 4;
+    grid-row: 2;
+    text-align: left;
+}
+
+.footer-contact h3 {
+    
+    margin-bottom: 0.1rem;
+}
+
+.footer-contact p {
+    
+    margin-bottom: 1px;
+}
+
+.footer-contact a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.footer-contact i {
+    margin-right: 0.1rem;
+    color: #ff6600;
+    
+}
+
+.footer-security {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    text-align: left;
+}
+
+.footer-security h3 {
+    
+    margin-bottom: 0.1rem;
+}
+
+.footer-security p {
+    
+    margin-bottom: 0.1rem;
+}
+
+
+
+.footer-availability {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    text-align: left;
+}
+
+.footer-availability h3 {
+    
+    margin-bottom: 0.1rem;
+}
+
+.footer-availability p {
+   
+    margin-bottom: 0.1rem;
+}
+
+
+.footer-latest-blogs{
+    grid-column: 3 / 4;
+    grid-row: 1;
+    text-align: left;
+}
+
+.footer-latest-blogs h3 {
+   
+    margin-bottom: 0.1rem;
+}
+
+.footer-latest-blogs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-latest-blogs li{
+    margin-bottom: 0.1rem;
+}
+
+.footer-latest-blogs a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+.footer-latest-blogs a:hover {
+    text-decoration: underline;
+}
+
+.footer-newsletter{
+    grid-column: 4 / 4;
+    grid-row: 1;
+    text-align: left;
+}
+
+
+.footer-newsletter h3{
+    
+    margin-bottom: 0.1rem;
+}
+
+.footer-newsletter input {
+    padding: 0.2rem;
+    border: none;
+    border-radius: 0.25rem;
+    width: 100px;
+    
+}
+
+.footer-newsletter button {
+    padding: 0.2rem 0.4rem;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;    
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.footer-newsletter button:hover {
+    background-color: #cc5200;
+}
+
+.footer-copyright {
+    grid-column: 4 / 5;
+    grid-row: 2;
+    text-align: center;
+    color: #bbb;
     margin-top: 4rem;
+}
+
+.footer-copyright a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.footer-nav ul {
+    list-style: none;
+    flex-direction: column;  
+    gap: 0.2rem;
+}
+
+.footer-nav a {
+    color: #eee;
+    text-decoration: none;
+    transition: 0.3s;   
+    
+}
+
+.footer-nav a:hover {
+    color: #ff6600;
+}
+
+.footer-social {
+    
+    gap: 0.2rem;
+    grid-column: 3 / 5;
+    grid-row: 3;    
+    margin-top: 0.8rem;
+    
+}
+
+.footer-social a {
+    color: #eee;
+    padding: 2px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #ff6600;
+}
+
+
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .footer-section{
+        text-align: center;
+    }
+    .footer-nav ul{
+        justify-content: center;
+    }
+    .footer-brand, .footer-nav, .footer-social, .footer-tech, .footer-security, .footer-availability, .footer-latest-blogs, .footer-newsletter, .footer-contact, .footer-copyright{
+        grid-column: 1/1;
+        grid-row: auto;
+        
+    }
 }
 
 /* Responsive Media Queries */

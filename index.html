@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- type="image/png" or type="image/x-icon": Specifies the MIME type of the icon.  Use image/png for PNG files and image/x-icon for ICO files.
+sizes="32x32" or sizes="16x16": Specifies the size of the icon.  This is important for some browsers and devices.
+meta name="theme-color": Specifies the default theme color for the browser. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@300;400;600&display=swap">
+     <link rel="icon" type="image/png" sizes="32x32" href="images/favicorn.webp">
+     <link rel="icon" type="image/png" sizes="16x16" href="images/favicorn.webp">
     <title>Derrick's Portfolio</title>
+    <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha384-zLNHqG0fKWlUq/zGLFdx2zzZm4wvM0jo/l4lmebUANmggwYaOvFjEIb1N7cfy/+4" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0Hhonpy0aDPbj/nfTbtJZL0/JUyXqlTC3tsHnjU94w773lXywf6Y8ql9awhhH6yrvFLLruYWxZUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">&lt;&#8726 Coder &#8726&gt;</div>
-            <ul>
+            <div class="logo">Coding.</div>
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -25,7 +35,12 @@
                 <li><a href="#github">GitHub</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="contact-button">Contact Me</button>
+            <!-- Hamburger Icon -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>         
             
         </nav>
     </header>
@@ -51,59 +66,63 @@
         </div>
     </section>
 
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>A passionate software developer with a keen interest in cybersecurity. I strive to build robust and secure applications, leveraging my skills in various technologies to solve complex problems and create innovative solutions.</p>
+    <div class="about-container">
+        <!-- Header Section -->
+        <section class="about-header">
+            <h1>About Me</h1>
+            <p>I'm a passionate software developer and cybersecurity enthusiast dedicated to building secure, scalable, and efficient applications. With a strong background in ethical hacking and full-stack development, I strive to create robust digital solutions.</p>
+        </section>
+    
+        <!-- First Section: Code & Experience -->
         <div class="about-content">
-            <div class="skills">
-                <h3>Skills</h3>
-                <div class="skill-bars">
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-skill="Python" data-percent="90" style="width: 90%"></div>
-                        <p class="skill-title">Python</p>
-                        <p class="skill-percentage">90%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-skill="Java" data-percent="85" style="width: 85%"></div>
-                        <p class="skill-title">Java</p>
-                         <p class="skill-percentage">85%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-skill="C#" data-percent="80" style="width: 80%"></div>
-                         <p class="skill-title">C#</p>
-                         <p class="skill-percentage">80%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-skill="Django" data-percent="75" style="width: 75%"></div>
-                        <p class="skill-title">Django</p>
-                        <p class="skill-percentage">75%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-skill="HTML" data-percent="95" style="width: 95%"></div>
-                        <p class="skill-title">HTML</p>
-                        <p class="skill-percentage">95%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-skill="CSS" data-percent="90" style="width: 90%"></div>
-                        <p class="skill-title">CSS</p>
-                        <p class="skill-percentage">90%</p>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-skill="JavaScript" data-percent="80" style="width: 80%"></div>
-                        <p class="skill-title">JavaScript</p>
-                        <p class="skill-percentage">80%</p>
-                    </div>
-                </div>
+            <!-- Left: Image of development code -->
+            <div class="section-image">
+                <img src="images/favicorn.webp" alt="Coding Image" style="width:100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             </div>
-            <div class="education">
-                <h3>Education</h3>
+            <!-- Right: Experience Section -->
+            <div class="experience">
+                <h2>Experience</h2>
+                <p><strong>Software Developer | Cybersecurity Analyst</strong></p>
                 <ul>
-                    <li><strong>Bachelor of Science in Computer Science</strong> - University of Example (2018 - 2022)</li>
-                    <li><strong>Certified Ethical Hacker (CEH)</strong> - EC-Council (2023)</li>
+                    <li>Developed secure web applications using <strong>Django</strong>, <strong>FastAPI</strong>, and <strong>React</strong>.</li>
+                    <li>Performed <strong>penetration testing</strong> and <strong>security audits</strong> on applications.</li>
+                    <li>Worked on <strong>cloud security</strong> and <strong>network monitoring</strong> solutions.</li>
+                    <li>Implemented <strong>API security</strong> and best practices.</li>
                 </ul>
             </div>
         </div>
-    </section>
+    
+        <!-- Second Section: Education & Skills -->
+        <div class="about-content">
+            <!-- Left: Education -->
+            <div class="education">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Bachelor's in Computer Science</h3>
+                    <p>XYZ University | 2019 - 2023</p>
+                </div>
+                <div class="education-item">
+                    <h3>Certified Ethical Hacker (CEH)</h3>
+                    <p>EC-Council | 2024</p>
+                </div>
+                <div class="education-item">
+                    <h3>AWS re/Start Cloud Program</h3>
+                    <p>AWS | 2024</p>
+                </div>
+            </div>
+    
+            <!-- Right: Skills Section -->
+            <div class="skills">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <div class="skill python"><div class="progress-circle"><svg><circle class="bg" cx="60" cy="60" r="50"></circle><circle class="bar" cx="60" cy="60" r="50"></circle></svg><span class="progress-text">85%</span></div><p class="skill-name">Python</p></div>
+                    <div class="skill ethical-hacking"><div class="progress-circle"><svg><circle class="bg" cx="60" cy="60" r="50"></circle><circle class="bar" cx="60" cy="60" r="50"></circle></svg><span class="progress-text">75%</span></div><p class="skill-name">Ethical Hacking</p></div>
+                    <div class="skill django"><div class="progress-circle"><svg><circle class="bg" cx="60" cy="60" r="50"></circle><circle class="bar" cx="60" cy="60" r="50"></circle></svg><span class="progress-text">80%</span></div><p class="skill-name">Django</p></div>
+                    <div class="skill javascript"><div class="progress-circle"><svg><circle class="bg" cx="60" cy="60" r="50"></circle><circle class="bar" cx="60" cy="60" r="50"></circle></svg><span class="progress-text">70%</span></div><p class="skill-name">JavaScript</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section id="services" class="services">
         <h2>Services</h2>
@@ -176,17 +195,46 @@
 
     <section id="testimonials" class="testimonials">
         <h2>Testimonials</h2>
-        <div class="testimonial-list">
+    
+        <!-- Testimonials List (Static + Dynamic) -->
+        <div class="testimonial-list" id="testimonial-results">
+            <!-- Pre-added testimonials -->
             <div class="testimonial-item">
+                <img src="https://via.placeholder.com/80" alt="Profile" class="profile-pic">
                 <p>"Derrick is a highly skilled developer with excellent communication. He delivered the project on time and exceeded my expectations."</p>
                 <p class="author">- John Doe, CEO of Company A</p>
             </div>
             <div class="testimonial-item">
+                <img src="https://via.placeholder.com/80" alt="Profile" class="profile-pic">
                 <p>"Working with Derrick was a great experience. His expertise in cybersecurity was invaluable to our project."</p>
                 <p class="author">- Jane Smith, Project Manager at Company B</p>
             </div>
+        </div>  
+    
+        <!-- Testimonial Submission Form -->
+        <div class="testimonial-container">
+            <h3>Submit Your Testimonial</h3>
+            <div class="testimonial-form">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <textarea id="feedback" placeholder="Your Feedback" required></textarea>
+                <select id="rating" required>
+                    <option value="" disabled selected>Select Rating</option>
+                    <option value="5">⭐⭐⭐⭐⭐ (5 Stars)</option>
+                    <option value="4">⭐⭐⭐⭐ (4 Stars)</option>
+                    <option value="3">⭐⭐⭐ (3 Stars)</option>
+                    <option value="2">⭐⭐ (2 Stars)</option>
+                    <option value="1">⭐ (1 Star)</option>
+                </select>
+             <!-- Profile Upload -->
+            <label for="profile" class="file-label">Upload Profile</label>
+            <input type="file" id="profile" accept="image/*">
+
+                <button onclick="submitTestimonial()">Submit</button>
+            </div>
         </div>
     </section>
+    
+    
 
     <section id="github" class="github-section">
         <h2>GitHub</h2>
@@ -219,7 +267,7 @@
                     <h4>Website</h4>
                     <p><a href="your-website.com" target="_blank">your-website.com</a></p>
                 </div>
-                <div class="info-item">
+                <!-- <div class="info-item">
                     <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn Profile">
                         <i class="fab fa-linkedin"></i>
                     </a>
@@ -242,7 +290,7 @@
                         <i class="fab fa-facebook"></i>
                     </a>
                     <h4>Facebook</h4>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="contact-form-section">
@@ -268,24 +316,77 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2023 Derrick's Portfolio. All rights reserved.</p>
-    </footer>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <h2>Cypher Jr.</h2>
+                <p>Software Developer | Cybersecurity Enthusiast</p>
+                <p>Building Secure & Scalable Software Solutions</p>
+            </div>
+            <div class="footer-section footer-availability">
+                <h3>Freelance & Availability</h3>
+                <p>✔ Open for freelance and consulting work</p>
+                <p>✔ Available for collaborations and mentorship</p>
+                <p>✔ Remote work preferred</p>
+            </div>
+            <div class="footer-section footer-latest-blogs">
+                <h3>Latest Updates</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#">10 Best Security Practices for Web Apps</a></li>
+                    <li><a href="#">Building a Secure API with FastAPI</a></li>
+                    <li><a href="#">React vs Flutter for Mobile Development</a></li>
+                </ul>
+            </div>
+           
+            
+            <div class="footer-section footer-tech">
+                <h3>Tech Stack</h3>
+                <p>Python (Django, FastAPI) | JavaScript (React, TypeScript) | Flutter</p>
+                <p>SQL (PostgreSQL, MySQL) | NoSQL (MongoDB, Firebase)</p>
+                <p>Networking & Cybersecurity | Ethical Hacking | Cloud (AWS, Azure)</p>
+            </div>
 
-    <script>
-        $(function() {
-            $('.skill-bar-fill').each(function() {
-                var percent = $(this).data('percent');
-                var skill = $(this).data('skill');
-                $(this).animate({
-                    width: percent + '%'
-                }, 1000);
-            });
-        });
-
-        function toggleMenu() {
-        document.querySelector(".nav-links").classList.toggle("active");
-    }
-    </script>
+            <div class="footer-section footer-security">
+                <h3>Cybersecurity & Ethical Hacking</h3>
+                <p>Passionate about security best practices, penetration testing, and secure coding.</p>
+                <p>Helping businesses build safe, efficient, and hack-proof applications.</p>
+            </div>
+    
+            <div class="footer-section footer-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section footer-contact">
+                <h3>Contact Me</h3>
+                <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                <p>Phone: +123 456 7890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Based in [Your City]</p>
+                <p>Available: Mon - Fri, 9 AM - 6 PM</p>
+                
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+    
+            
+    
+            <div class="footer-section footer-copyright">
+                <p>&copy; 2025 Cypher Jr. All rights reserved.</p>
+                <p>Powered by <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> & <a href="https://fontawesome.com/" target="_blank">Font Awesome</a></p>
+                <p><small>Disclaimer: All projects showcased here are for educational and professional portfolio purposes.</small></p>
+            </div>
+            
+        </div>
+    </footer>        
 </body>
 </html>
