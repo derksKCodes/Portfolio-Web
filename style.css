@@ -45,6 +45,7 @@ header {
   .logo {
     font-size: 1.8rem;
     font-weight: bold;
+    color: #ff6600;
   }
   
   /* Navigation Links */
@@ -172,7 +173,8 @@ header {
 
 .hero-buttons .hire-me {
     background-color: #222;
-    color: #fff;
+    color: #fbfbfb;
+  
 }
 
 .hero-buttons .cv {

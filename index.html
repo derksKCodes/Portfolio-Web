@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- type="image/png" or type="image/x-icon": Specifies the MIME type of the icon.  Use image/png for PNG files and image/x-icon for ICO files.
-sizes="32x32" or sizes="16x16": Specifies the size of the icon.  This is important for some browsers and devices.
-meta name="theme-color": Specifies the default theme color for the browser. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@300;400;600&display=swap">
-     <link rel="icon" type="image/png" sizes="32x32" href="images/favicorn.webp">
-     <link rel="icon" type="image/png" sizes="16x16" href="images/favicorn.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicorn.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicorn.webp">
     <title>Derrick's Portfolio</title>
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha384-zLNHqG0fKWlUq/zGLFdx2zzZm4wvM0jo/l4lmebUANmggwYaOvFjEIb1N7cfy/+4" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
-    <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0Hhonpy0aDPbj/nfTbtJZL0/JUyXqlTC3tsHnjU94w773lXywf6Y8ql9awhhH6yrvFLLruYWxZUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -35,13 +30,11 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
                 <li><a href="#github">GitHub</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <!-- Hamburger Icon -->
-    <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>         
-            
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -50,13 +43,20 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
             <h1>Hi</h1>
             <h1>I'm <span class="highlight">Derrick</span></h1>
             <h1>a Software Developer and CyberSecurity Enthusiast</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolorum eum laudantium, unde voluptatum nemo non exercitationem neque ab delectus voluptas asperiores architecto ad eveniet mollitia provident harum pariatur porro.</p>
+<p>With a strong foundation in software development and cybersecurity, I am passionate about creating secure, scalable, and innovative solutions. 
+    My experience spans across full-stack development, cloud computing, and ethical hacking. 
+    I am committed to ensuring the highest standards of security in all projects, while leveraging modern technologies to deliver high-quality applications.
+   
+</p>
+
             <div class="hero-buttons">
-                <button class="hire-me">Hire Me</button>
-                <button class="cv">Download CV</button>
+                <button class="hire-me"><a href="#contact"> Hire Me</a></button>
+                <button class="cv">
+                    <a href="files/Derrick_Karanja_Resume.pdf" target="_blank">Download CV</a>
+                </button>
                 <div class="hero-social-icons">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/derks01/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/your-github-username"><i class="fab fa-github"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
@@ -67,59 +67,56 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
     </section>
 
     <div class="about-container">
-        <!-- Header Section -->
         <section class="about-header">
             <h1>About Me</h1>
-            <p>I'm a passionate software developer and cybersecurity enthusiast dedicated to building secure, scalable, and efficient applications. With a strong background in ethical hacking and full-stack development, I strive to create robust digital solutions.</p>
+            <p>I am a passionate software developer and cybersecurity enthusiast with a strong focus on creating secure, scalable, and user-friendly digital solutions. My expertise spans across full-stack development, ethical hacking, and cloud technologies, where I build applications with an emphasis on security and performance. With a background in ethical hacking, I strive to identify vulnerabilities before they can be exploited, ensuring the highest standards of security for my clients. I am constantly learning and evolving in this fast-paced industry, always excited to explore new technologies and take on complex challenges.</p>
+
         </section>
     
-        <!-- First Section: Code & Experience -->
         <div class="about-content">
-            <!-- Left: Image of development code -->
             <div class="section-image">
                 <img src="images/favicorn.webp" alt="Coding Image" style="width:100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             </div>
-            <!-- Right: Experience Section -->
             <div class="experience">
                 <h2>Experience</h2>
-                <p><strong>Software Developer | Cybersecurity Analyst</strong></p>
+                <p><strong>Python Web Scraper Developer</strong></p>
                 <ul>
-                    <li>Developed secure web applications using <strong>Django</strong>, <strong>FastAPI</strong>, and <strong>React</strong>.</li>
-                    <li>Performed <strong>penetration testing</strong> and <strong>security audits</strong> on applications.</li>
-                    <li>Worked on <strong>cloud security</strong> and <strong>network monitoring</strong> solutions.</li>
-                    <li>Implemented <strong>API security</strong> and best practices.</li>
+                    <li>Developed and optimized Python web scrapers for clients in e-commerce, research, and financial analytics.</li>
+                    <li>Improved scraping efficiency by 60% by implementing asynchronous processing with Scrapy and multiprocessing techniques.</li>
+                    <li>Automated data extraction workflows, reducing manual effort by 70% through scheduled scraping tasks.</li>
+                    <li>Extracted, cleaned, and stored over 5 million records in PostgreSQL, MongoDB, ensuring 99% data accuracy.</li>
+                    <li>Built a web dashboard (Flask + React) to visualize real-time scraped data for clients.</li>
+                    <li>Implemented proxy rotation and headless browsing, reducing the IP ban rate by 80%.</li>
                 </ul>
             </div>
         </div>
     
-        <!-- Second Section: Education & Skills -->
         <div class="about-content">
-            <!-- Left: Education -->
             <div class="education">
                 <h2>Education</h2>
                 <div class="education-item">
-                    <h3>Bachelor's in Computer Science</h3>
-                    <p>XYZ University | 2019 - 2023</p>
+                    <h3>BSc. Mathematics and Computer Science</h3>
+                    <p>Meru University of Science and Technology, Kenya | 2021 - 2025</p>
                 </div>
                 <div class="education-item">
-                    <h3>Certified Ethical Hacker (CEH)</h3>
-                    <p>EC-Council | 2024</p>
-                </div>
-                <div class="education-item">
-                    <h3>AWS re/Start Cloud Program</h3>
-                    <p>AWS | 2024</p>
+                    <h3>Certifications</h3>
+                    <p>Python for Data Science – Cisco Networking Academy</p>
+                    <p>Web Scraping with Python & Scrapy – Udemy</p>
+                    <p>Cloud Computing Fundamentals (AWS, GCP) – ALX</p>
+                    <p>AI & Data Science Essentials – Microsoft Training</p>
+                    <p>Ethical hacking - Cisco Networking Academy</p>
+                    <p>Data Entry and Management - AJira Digital Kenya</p>
                 </div>
             </div>
     
-            <!-- Right: Skills Section -->
             <div class="skills">
                 <h2>Skills</h2>
-                <div class="skills-container">
+                 <div class="skills-container">
                     <div class="skill python"><div class="progress-circle"><svg><circle class="bg" cx="60" cy="60" r="50"></circle><circle class="bar" cx="60" cy="60" r="50"></circle></svg><span class="progress-text">85%</span></div><p class="skill-name">Python</p></div>
                     <div class="skill ethical-hacking"><div class="progress-circle"><svg><circle class="bg" cx="60" cy="60" r="50"></circle><circle class="bar" cx="60" cy="60" r="50"></circle></svg><span class="progress-text">75%</span></div><p class="skill-name">Ethical Hacking</p></div>
                     <div class="skill django"><div class="progress-circle"><svg><circle class="bg" cx="60" cy="60" r="50"></circle><circle class="bar" cx="60" cy="60" r="50"></circle></svg><span class="progress-text">80%</span></div><p class="skill-name">Django</p></div>
                     <div class="skill javascript"><div class="progress-circle"><svg><circle class="bg" cx="60" cy="60" r="50"></circle><circle class="bar" cx="60" cy="60" r="50"></circle></svg><span class="progress-text">70%</span></div><p class="skill-name">JavaScript</p></div>
-                </div>
+               </div>
             </div>
         </div>
     </div>
@@ -129,33 +126,33 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
         <div class="service-list">
             <div class="service-item">
                 <i class="fas fa-code"></i>
-                <h3>Web Development</h3>
-                <p>Building responsive and user-friendly websites using modern front-end and back-end technologies.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>Mobile App Development</h3>
-                <p>Developing cross-platform mobile applications for iOS and Android using frameworks like React Native.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Cybersecurity Consulting</h3>
-                <p>Providing expertise in vulnerability assessment, penetration testing, and security hardening.</p>
+                <h3>Web Scraping</h3>
+                <p>Efficient data extraction from websites using Python, Scrapy, Selenium, and other tools.</p>
             </div>
             <div class="service-item">
                 <i class="fas fa-database"></i>
-                <h3>Database Design & Management</h3>
-                <p>Designing efficient and scalable database schemas and managing database systems.</p>
-            </div>
-             <div class="service-item">
-                <i class="fas fa-network-wired"></i>
-                <h3>Network Security</h3>
-                <p>Implementing and maintaining secure network infrastructures.</p>
+                <h3>Data Extraction and Processing</h3>
+                <p>Extracting, cleaning, and transforming data into usable formats for analysis and reporting.</p>
             </div>
             <div class="service-item">
+                <i class="fas fa-chart-line"></i>
+                <h3>Data Visualization</h3>
+                <p>Creating dashboards and visualizations to represent scraped data.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-cogs"></i>
+                <h3>Automation</h3>
+                <p>Automating data extraction and processing workflows.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Web Scraping Ethics & Compliance</h3>
+                <p>Ensuring all scraping activities are performed ethically and in compliance with website terms of service.</p>
+            </div>
+             <div class="service-item">
                 <i class="fas fa-cloud"></i>
-                <h3>Cloud Solutions</h3>
-                <p>Developing and deploying applications on cloud platforms like AWS, Azure, and Google Cloud.</p>
+                <h3>Cloud Deployment</h3>
+                <p>Deploying and scaling web scraping solutions on cloud platforms.</p>
             </div>
         </div>
     </section>
@@ -163,10 +160,15 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
     <section id="projects" class="projects">
         <h2>Projects</h2>
         <div class="project-list">
-            <div class="project-item">
+             <div class="project-item">
                 <img src="images/project1.png" alt="Project 1">
-                <h3>Project Title 1</h3>
-                <p>A brief description of Project 1. Highlight the technologies used and the key features.</p>
+                <h3>Automated E-Commerce Price Monitoring Tool</h3>
+                <p>
+                    Reduced manual price tracking time by 90% using automated scraping pipelines. Increased
+                    scraping efficiency by 40% by switching to asynchronous requests in Scrapy. Implemented proxy
+                    rotation, reducing IP bans by 80%. Stored & processed over 3 million price records, enabling better
+                    market analysis for clients.
+                </p>
                 <div class="project-buttons">
                     <a href="#" target="_blank">Live Demo</a>
                     <a href="#" target="_blank">GitHub</a>
@@ -174,8 +176,12 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
             </div>
             <div class="project-item">
                 <img src="images/project2.png" alt="Project 2">
-                <h3>Project Title 2</h3>
-                <p>A brief description of Project 2. Focus on the problem it solves and the impact it has.</p>
+                <h3>Job Posting Aggregator for Remote Work</h3>
+                <p>
+                    Built a scraper that collected 10,000+ job postings monthly from multiple sources. Designed a REST
+                    API to serve the scraped data dynamically via Flask. Automated scraper scheduling, reducing
+                    maintenance workload by 60%. Deployed using Docker & AWS Lambda for scalability and reliability.
+                </p>
                 <div class="project-buttons">
                     <a href="#" target="_blank">Live Demo</a>
                     <a href="#" target="_blank">GitHub</a>
@@ -183,8 +189,12 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
             </div>
             <div class="project-item">
                 <img src="images/project3.png" alt="Project 3">
-                <h3>Project Title 3</h3>
-                <p>A brief description of Project 3. Showcase any unique or challenging aspects of the project.</p>
+                <h3>Portfolio Website for a Freelance Writer</h3>
+                <p>
+                    Designed and developed a fully responsive personal portfolio showcasing writing samples.
+                    Implemented dynamic content management so the client could update blogs/articles easily. Optimized
+                    site speed by 40%, ensuring fast loading and improved SEO ranking.
+                </p>
                 <div class="project-buttons">
                     <a href="#" target="_blank">Live Demo</a>
                     <a href="#" target="_blank">GitHub</a>
@@ -195,10 +205,7 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
 
     <section id="testimonials" class="testimonials">
         <h2>Testimonials</h2>
-    
-        <!-- Testimonials List (Static + Dynamic) -->
         <div class="testimonial-list" id="testimonial-results">
-            <!-- Pre-added testimonials -->
             <div class="testimonial-item">
                 <img src="https://via.placeholder.com/80" alt="Profile" class="profile-pic">
                 <p>"Derrick is a highly skilled developer with excellent communication. He delivered the project on time and exceeded my expectations."</p>
@@ -206,14 +213,13 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
             </div>
             <div class="testimonial-item">
                 <img src="https://via.placeholder.com/80" alt="Profile" class="profile-pic">
-                <p>"Working with Derrick was a great experience. His expertise in cybersecurity was invaluable to our project."</p>
+                <p>"Working with Derrick was a great experience. His expertise in web scraping and data extraction was invaluable to our project."</p>
                 <p class="author">- Jane Smith, Project Manager at Company B</p>
             </div>
-        </div>  
-    
-        <!-- Testimonial Submission Form -->
+        </div>
         <div class="testimonial-container">
             <h3>Submit Your Testimonial</h3>
+            <form id="form_Data" action="/submit_testimonial" enctype="multipart/form-data" method="post">
             <div class="testimonial-form">
                 <input type="text" id="name" placeholder="Your Name" required>
                 <textarea id="feedback" placeholder="Your Feedback" required></textarea>
@@ -225,21 +231,18 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
                     <option value="2">⭐⭐ (2 Stars)</option>
                     <option value="1">⭐ (1 Star)</option>
                 </select>
-             <!-- Profile Upload -->
-            <label for="profile" class="file-label">Upload Profile</label>
-            <input type="file" id="profile" accept="image/*">
-
-                <button onclick="submitTestimonial()">Submit</button>
+                <label for="profile" class="file-label">Upload Profile</label>
+                <input type="file" id="profile" accept="image/*">
+                <button type="submit">Submit Testimonial</button>
             </div>
+        </form>
         </div>
     </section>
-    
-    
 
     <section id="github" class="github-section">
         <h2>GitHub</h2>
         <p>Check out my projects and contributions on GitHub:</p>
-        <a href="https://github.com/your-github-username" target="_blank" class="github-link">
+        <a href="https://github.com/derksKCodes" target="_blank" class="github-link">
             Visit My GitHub Profile
         </a>
     </section>
@@ -255,42 +258,18 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
                 <div class="info-item">
                     <i class="fas fa-envelope"></i>
                     <h4>Email</h4>
-                    <p><a href="mailto:your-email@example.com">your-email@example.com</a></p>
+                    <p><a href="mailto:derrick01.dk@gmail.com">derrick01.dk@gmail.com</a></p>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-phone"></i>
                     <h4>Phone</h4>
-                    <p><a href="tel:+1234567890">+123 456 7890</a></p>
+                    <p><a href="tel:0795150677">0795150677</a></p>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-globe"></i>
-                    <h4>Website</h4>
-                    <p><a href="your-website.com" target="_blank">your-website.com</a></p>
-                </div>
-                <!-- <div class="info-item">
-                    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn Profile">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
                     <h4>LinkedIn</h4>
+                    <p><a href="https://www.linkedin.com/in/derks01/" target="_blank">www.linkedin.com/in/derks01/</a></p>
                 </div>
-                <div class="info-item">
-                    <a href="https://github.com" target="_blank" aria-label="GitHub Profile">
-                       <i class="fab fa-github"></i>
-                    </a>
-                    <h4>GitHub</h4>
-                </div>
-                <div class="info-item">
-                    <a href="https://twitter.com" target="_blank" aria-label="Twitter Profile">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <h4>Twitter</h4>
-                </div>
-                <div class="info-item">
-                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook Profile">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <h4>Facebook</h4>
-                </div> -->
             </div>
         </div>
         <div class="contact-form-section">
@@ -320,8 +299,8 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
         <div class="footer-content">
             <div class="footer-section footer-brand">
                 <h2>Cypher Jr.</h2>
-                <p>Software Developer | Cybersecurity Enthusiast</p>
-                <p>Building Secure & Scalable Software Solutions</p>
+                <p>Software Developer</p>
+                <p>Ethical Hacker</p>
             </div>
             <div class="footer-section footer-availability">
                 <h3>Freelance & Availability</h3>
@@ -332,26 +311,22 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
             <div class="footer-section footer-latest-blogs">
                 <h3>Latest Updates</h3>
                 <ul class="list-unstyled">
-                    <li><a href="#">10 Best Security Practices for Web Apps</a></li>
-                    <li><a href="#">Building a Secure API with FastAPI</a></li>
-                    <li><a href="#">React vs Flutter for Mobile Development</a></li>
+                    <li><a href="#">Automated E-Commerce Price Monitoring Tool</a></li>
+                    <li><a href="#">Job Posting Aggregator for Remote Work</a></li>
+                    <li><a href="#">Portfolio Website for a Freelance Writer</a></li>
+                     <li><a href="#">Academic Past Paper Scraper</a></li>
                 </ul>
             </div>
-           
-            
             <div class="footer-section footer-tech">
                 <h3>Tech Stack</h3>
                 <p>Python (Django, FastAPI) | JavaScript (React, TypeScript) | Flutter</p>
                 <p>SQL (PostgreSQL, MySQL) | NoSQL (MongoDB, Firebase)</p>
                 <p>Networking & Cybersecurity | Ethical Hacking | Cloud (AWS, Azure)</p>
             </div>
-
             <div class="footer-section footer-security">
-                <h3>Cybersecurity & Ethical Hacking</h3>
-                <p>Passionate about security best practices, penetration testing, and secure coding.</p>
-                <p>Helping businesses build safe, efficient, and hack-proof applications.</p>
+                <h3>What I Do</h3>
+                <p>I specialize in developing efficient and reliable web scraping solutions to extract data from various online sources.  I leverage Python and tools like Scrapy, BeautifulSoup, and Selenium to gather the data you need.</p>
             </div>
-    
             <div class="footer-section footer-nav">
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -362,31 +337,26 @@ meta name="theme-color": Specifies the default theme color for the browser. -->
                     <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </div>
-    
             <div class="footer-section footer-contact">
                 <h3>Contact Me</h3>
-                <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-                <p>Phone: +123 456 7890</p>
-                <p><i class="fas fa-map-marker-alt"></i> Based in [Your City]</p>
+                <p>Email: <a href="mailto:derrick01.dk@gmail.com">derrick01.dk@gmail.com</a></p>
+                <p>Phone: 0795150677</p>
+                <p><i class="fas fa-map-marker-alt"></i> Based in Nairobi, Kenya</p>
                 <p>Available: Mon - Fri, 9 AM - 6 PM</p>
-                
                 <div class="footer-social">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/derks01/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/your-github-username" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
             </div>
-    
-            
-    
             <div class="footer-section footer-copyright">
-                <p>&copy; 2025 Cypher Jr. All rights reserved.</p>
-                <p>Powered by <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> & <a href="https://fontawesome.com/" target="_blank">Font Awesome</a></p>
+                <p>&copy; 2025 Derrick Karanja. All rights reserved.</p>
+                <p>Powered by <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> &amp; <a href="https://fontawesome.com/" target="_blank">Font Awesome</a></p>
                 <p><small>Disclaimer: All projects showcased here are for educational and professional portfolio purposes.</small></p>
             </div>
-            
         </div>
-    </footer>        
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
