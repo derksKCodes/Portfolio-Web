@@ -12,12 +12,12 @@ CORS(app)  # Enable CORS for all routes
 db_config = {
     "host": "localhost",
     "user": "root",
-    "password": "1234",
-    "database": "dbweb"
+    "password": "delohz.k.01/",
+    "database": "portfolio_db"
 }
 
 # Upload folder for profile pictures
-UPLOAD_FOLDER = 'uploads'  # Create this folder in your project directory
+UPLOAD_FOLDER = os.path.join('static', 'uploads')  # Create this folder in your project directory
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}  # Allowed file types
 
@@ -39,17 +39,23 @@ def submit_testimonial():
         if 'profile' in request.files:
             profile = request.files['profile']
             if profile and allowed_file(profile.filename):
-                filename = secure_filename(profile.filename)
-                profile_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-                profile.save(profile_url)  # Save the file
-                #  Important:  Store the *path* (profile_url) in your database, not the raw file data
-
+                filename = secure_filename(profile.filename)                    
+                profile.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                profile_url = filename  # ✅ Only store the filename in the DB)              
 
         cursor.execute(
             "INSERT INTO testimonials (name, feedback, rating, profile_url_name) VALUES (%s, %s, %s, %s)",
             (name, feedback, rating, profile_url)
         )
         conn.commit()
+        
+        return jsonify({
+            "message": "Testimonial submitted successfully!",
+            "name": name,
+            "feedback": feedback,
+            "rating": rating,
+            "profile_image": filename  # this can be null if no file uploaded
+        }), 200
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500

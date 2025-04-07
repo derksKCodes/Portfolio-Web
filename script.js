@@ -54,19 +54,55 @@ function toggleMenu() {
 }
 
 
-// Handle testimonial form submission
-// Helper function to create a testimonial element
-function createTestimonialElement(testimonial, profileImage) {
-    let newTestimonial = document.createElement('div');
-    newTestimonial.classList.add('testimonial-item');
-    newTestimonial.innerHTML = `
-        <img src="${profileImage}" alt="Profile" class="profile-pic">
-        <p>"${testimonial.feedback}"</p>
-        <p class="author">- ${testimonial.name}, Rating: ${testimonial.rating} Stars</p>
-    `;
-    return newTestimonial;
+
+// // Helper function to create a testimonial element
+// function createTestimonialElement(testimonial, profileImage) {
+//     let newTestimonial = document.createElement('div');
+//     newTestimonial.classList.add('testimonial-item');
+//     newTestimonial.innerHTML = `
+//         <img src="${profileImage}" alt="Profile" class="profile-pic">
+//         <p>"${testimonial.feedback}"</p>
+//         <p class="author">- ${testimonial.name}, Rating: ${testimonial.rating} Stars</p>
+//     `;
+//     return newTestimonial;
+// }
+
+
+// Function to fetch and display testimonials
+function fetchAndDisplayTestimonials() {
+    fetch("http://localhost:8080/get_testimonials")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            let testimonialList = document.getElementById("testimonial-results");           
+        
+            data.forEach(testimonial => {
+                let profileImage = testimonial.profile_image
+                    ? `http://localhost:8080/static/uploads/${testimonial.profile_image}`
+                    : 'https://via.placeholder.com/80';
+                let newTestimonial = document.createElement('div');
+                newTestimonial.classList.add('testimonial-item');
+                newTestimonial.innerHTML = `
+                    <img src="${profileImage}" alt="Client Profile" class="profile-pic">
+                    <p>"${testimonial.feedback}"</p>
+                    <p class="author">- ${testimonial.name}, Rating: ${testimonial.rating} Stars</p>
+                `;
+                testimonialList.appendChild(newTestimonial);
+            });
+            
+        })
+        .catch(error => {
+            console.error("Error fetching testimonials:", error);
+            alert("Failed to load testimonials: " + error.message);
+        });
 }
 
+
+// Handle testimonial form submission
 document.getElementById('form_Data').addEventListener('submit', function(event)
  {
     event.preventDefault(); // Stop the form from submitting normally
@@ -93,42 +129,25 @@ document.getElementById('form_Data').addEventListener('submit', function(event)
         method: "POST",
         body: formData,
     })
-    .then(response => response.json())
-    
+    .then(response => response.json())    
     .then(data => {
+        console.log("Success:", data);
         // Optional: show status message
         let statusDiv = document.getElementById("submission-status");
         statusDiv.textContent = data.message;
-        statusDiv.className = "success";
-
-        // // Clear form
-        // document.getElementById("form_Data").reset();
-        // document.querySelector(".file-label").textContent = "Upload Profile";
-
-
-        // Display the new testimonial on the page
-        let testimonialList = document.getElementById("testimonial-results");
-
-          // Use uploaded image if available, otherwise use placeholder
-          let profileImage = data.profile_image 
-          ? `http://localhost:8080/static/uploads/${data.profile_image}` 
-          : 'https://via.placeholder.com/80';
-
-
-        // let newTestimonial = document.createElement('div');
-        // newTestimonial.classList.add('testimonial-item');
-      
-        // newTestimonial.innerHTML = `
-        //     <img src="${profileImage}" alt="Profile" class="profile-pic">
-        //     <p>"${data.feedback}"</p>
-        //     <p class="author">- ${data.name}, Rating: ${data.rating} Stars</p>
-        // `;      
-
-         // Create a new testimonial block
-         let newTestimonial = createTestimonialElement(data, profileImage);
-         testimonialList.appendChild(newTestimonial);
-        console.log(data.profile_image);       
-        testimonialList.appendChild(newTestimonial);
+        statusDiv.className = "success"; 
+        
+    
+        // Clear the form fields after successful submission
+        document.getElementById("name").value = "";
+        document.getElementById("feedback").value = "";
+        document.getElementById("rating").value = "";
+        document.getElementById("profile").value = "";       
+       
+setTimeout
+        // Redirect to testimonials section
+        setTimeout(()=>{window.location.href = "#testimonials"},2000)  //changed
+          
     })
     .catch(error => {
         console.error("Error:", error);
@@ -138,8 +157,11 @@ document.getElementById('form_Data').addEventListener('submit', function(event)
     });
 });
 
+// Call fetchAndDisplayTestimonials when the page loads
+window.onload = fetchAndDisplayTestimonials;
 
 
+//handle contact from submission
 document.getElementById("contact-form").addEventListener("submit", function (e) {
     e.preventDefault(); // Stop default form submission
 
