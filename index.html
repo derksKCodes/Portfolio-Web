@@ -222,21 +222,24 @@
 
     <section id="testimonials" class="testimonials">
         <h2>Testimonials</h2>
+        
         <div class="testimonial-list" id="testimonial-results">
+            
             <div class="testimonial-item">
                 <img src="images/client2.jpg" alt="Profile" class="profile-pic">
                 <p>"Derrick is a highly skilled developer with excellent communication. He delivered the project on time and exceeded my expectations."</p>
                 <p class="author">- John Doe, Freelancing client</p>
             </div>
             <div class="testimonial-item">
-                <img src="images/client.jpg" alt="Profile" class="profile-pic">
+                <img src="images/client.jpg" alt="Profile" class="profile-pic" id="profile-pic">
                 <p>"Working with Derrick was a great experience. His expertise in web scraping and data extraction was invaluable to our project."</p>
                 <p class="author">- Jane Smith, Upwork Client</p>
             </div>
         </div>
         <div class="testimonial-container">
             <h3>Submit Your Testimonial</h3>
-            <form id="form_Data" action="/submit_testimonial" enctype="multipart/form-data" method="post">
+            <div id="submission-status" style="margin-top: 10px;"></div>
+           <form id="form_Data">
             <div class="testimonial-form">
                 <input type="text" id="name" placeholder="Your Name" required>
                 <textarea id="feedback" placeholder="Your Feedback" required></textarea>
@@ -295,7 +298,7 @@
                 <h3>Send Me a Message</h3>
                 <p>I'll get back to you as soon as possible.</p>
             </div>
-            <form class="contact-form">
+            <form class="contact-form"  id="contact-form">
                 <div class="form-group">
                     <input type="text" id="name" name="name" placeholder="Name" required>
                 </div>

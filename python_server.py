@@ -1,16 +1,19 @@
 from flask import Flask, request, jsonify
 import mysql.connector
 import os
+from flask_cors import CORS 
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
+#CORS(app, origins=["http://127.0.0.1:5500"]) # Allow CORS for specific origin
 
 # MySQL Connection Configuration
 db_config = {
     "host": "localhost",
     "user": "root",
-    "password": "delohz.k.01/",
-    "database": "portfolio_db"
+    "password": "1234",
+    "database": "dbweb"
 }
 
 # Upload folder for profile pictures
@@ -48,37 +51,57 @@ def submit_testimonial():
         )
         conn.commit()
 
-        # return jsonify({"message": "Testimonial submitted successfully!"}), 200
-        # Return the new testimonial data, including profile image path
-        return jsonify({
-            "message": "Testimonial submitted successfully!",
-            "name": name,
-            "feedback": feedback,
-            "rating": rating,
-            "profile_image": profile_url if profile_url else "https://via.placeholder.com/80"  # Fallback if no profile image
-        }), 200
-
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     finally:
         cursor.close()
         conn.close()
+        
+        
+@app.route('/get_testimonials', methods=['GET'])
+def get_testimonials():
+    try:
+        conn = mysql.connector.connect(**db_config)
+        cursor = conn.cursor()
+        cursor.execute("SELECT name, feedback, rating, profile_url_name FROM testimonials")
+        testimonials = cursor.fetchall()
+        
+        # Format the data to return it in JSON format
+        response_data = []
+        for testimonial in testimonials:
+            response_data.append({
+                "name": testimonial[0],
+                "feedback": testimonial[1],
+                "rating": testimonial[2],
+                "profile_image": testimonial[3] if testimonial[3] else 'https://via.placeholder.com/80'
+            })
+
+        return jsonify(response_data), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    finally:
+        if 'cursor' in locals():
+            cursor.close()
+        if 'conn' in locals():
+            conn.close()
 
 @app.route('/submit_contact', methods=['POST'])
 def submit_contact():
     try:
-        conn = mysql.connector.connect(**db_config)
-        cursor = conn.cursor()
-
         name = request.form['name']
         email = request.form['email']
         subject = request.form['subject']
         message = request.form['message']
-
+        
+        
+         # Connect and insert into MySQL
+        conn = mysql.connector.connect(**db_config)
+        cursor = conn.cursor()
         cursor.execute(
             "INSERT INTO contacts (name, email, subject, message) VALUES (%s, %s, %s, %s)",
             (name, email, subject, message)
         )
+       
         conn.commit()
 
         return jsonify({"message": "Message sent successfully!"}), 200
@@ -86,8 +109,10 @@ def submit_contact():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     finally:
-        cursor.close()
-        conn.close()
+        if 'cursor' in locals():
+            cursor.close()
+        if 'conn' in locals():
+            conn.close()
 
 if __name__ == '__main__':
     # Create the upload folder if it doesn't exist

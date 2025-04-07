@@ -53,8 +53,22 @@ function toggleMenu() {
     });
 }
 
+
 // Handle testimonial form submission
-document.getElementById('form_Data').addEventListener('submit', function(event) {
+// Helper function to create a testimonial element
+function createTestimonialElement(testimonial, profileImage) {
+    let newTestimonial = document.createElement('div');
+    newTestimonial.classList.add('testimonial-item');
+    newTestimonial.innerHTML = `
+        <img src="${profileImage}" alt="Profile" class="profile-pic">
+        <p>"${testimonial.feedback}"</p>
+        <p class="author">- ${testimonial.name}, Rating: ${testimonial.rating} Stars</p>
+    `;
+    return newTestimonial;
+}
+
+document.getElementById('form_Data').addEventListener('submit', function(event)
+ {
     event.preventDefault(); // Stop the form from submitting normally
 
     // Collect form values
@@ -79,44 +93,75 @@ document.getElementById('form_Data').addEventListener('submit', function(event) 
         method: "POST",
         body: formData,
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
+    .then(response => response.json())
+    
     .then(data => {
-        alert(data.message); // Show success message
+        // Optional: show status message
+        let statusDiv = document.getElementById("submission-status");
+        statusDiv.textContent = data.message;
+        statusDiv.className = "success";
 
-        // Clear the form fields after successful submission
-        document.getElementById("name").value = "";
-        document.getElementById("feedback").value = "";
-        document.getElementById("rating").value = "";
-        document.getElementById("profile").value = "";
+        // // Clear form
+        // document.getElementById("form_Data").reset();
+        // document.querySelector(".file-label").textContent = "Upload Profile";
+
 
         // Display the new testimonial on the page
         let testimonialList = document.getElementById("testimonial-results");
 
-        // Create a new testimonial block
-        let newTestimonial = document.createElement('div');
-        newTestimonial.classList.add('testimonial-item');
+          // Use uploaded image if available, otherwise use placeholder
+          let profileImage = data.profile_image 
+          ? `http://localhost:8080/static/uploads/${data.profile_image}` 
+          : 'https://via.placeholder.com/80';
 
-        // Use uploaded image if available, otherwise use placeholder
-        let profileImage = data.profile_image 
-            ? `http://localhost:8080/static/uploads/${data.profile_image}` 
-            : 'https://via.placeholder.com/80';
 
-        newTestimonial.innerHTML = `
-            <img src="${profileImage}" alt="Profile" class="profile-pic">
-            <p>"${data.feedback}"</p>
-            <p class="author">- ${data.name}, Rating: ${data.rating} Stars</p>
-        `;
+        // let newTestimonial = document.createElement('div');
+        // newTestimonial.classList.add('testimonial-item');
+      
+        // newTestimonial.innerHTML = `
+        //     <img src="${profileImage}" alt="Profile" class="profile-pic">
+        //     <p>"${data.feedback}"</p>
+        //     <p class="author">- ${data.name}, Rating: ${data.rating} Stars</p>
+        // `;      
 
-        // Add the new testimonial to the list
+         // Create a new testimonial block
+         let newTestimonial = createTestimonialElement(data, profileImage);
+         testimonialList.appendChild(newTestimonial);
+        console.log(data.profile_image);       
         testimonialList.appendChild(newTestimonial);
     })
     .catch(error => {
         console.error("Error:", error);
-        alert("Failed to submit testimonial: " + error.message); // Error feedback
+        let statusDiv = document.getElementById("submission-status");
+        statusDiv.textContent = "Failed to submit testimonial: " + error.message;
+        statusDiv.className = "error";
     });
 });
+
+
+
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop default form submission
+
+    const form = e.target;
+    const formData = new FormData(form); // Gather all form data
+
+    fetch("http://localhost:8080/submit_contact", {
+        method: "POST",
+        body: formData // Send as form-data, not JSON
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message) {
+            alert(data.message); // Success message from server
+            form.reset(); // Optional: clear form fields
+        } else if (data.error) {
+            alert("Error: " + data.error); // Server-side error message
+        }
+    })
+    .catch(error => {
+        console.error("Fetch error:", error);
+        alert("Something went wrong while sending your message. Error details: "+ error.message);
+    });
+});
+
