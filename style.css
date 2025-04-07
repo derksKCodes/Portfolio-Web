@@ -111,22 +111,6 @@ header {
   }
   
 
-/* .contact-button {
-    background-color: #cc1818; 
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    font-weight: bold;
-    margin-left: 2rem;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-} */
-
-/* .contact-button:hover {
-    background-color: #a51212;
-} */
 
 /* Hero Section Styles */
 .hero {
@@ -368,6 +352,13 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-style: italic;
     color: #555;
+}
+
+.testimonial-item .profile-pic{
+    width: 250px;
+    height:250px;
+    border-radius: 50%;
+
 }
 
 .testimonial-item .author {
