@@ -193,7 +193,7 @@ nav a:target {
 }
 
 .hero-buttons .hire-me a,
-.hero-buttons .cv a {
+.hero-buttons .cv  {
     text-decoration: none;
     color: #fff;
 }
