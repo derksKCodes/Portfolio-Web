@@ -689,10 +689,11 @@ nav a:target {
 footer {
     background-color: #222;
     color: #eee;
-    padding: 7px; /* Increased footer padding */
+    
     text-align: left;
     font-size: 13px; /* Increased font size in footer */
     line-height: 1.3;
+    padding-bottom: 24px;
 }
 
 .footer-content {
