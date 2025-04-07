@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    
     box-sizing: border-box;
   }
 body {
@@ -19,7 +19,7 @@ body {
 .projects { background-color: #eef7ea; } /* Light Green */
 .testimonials { background-color: #f3e8ff; } /* Light Purple */
 .contact-section { background-color: #fff5f5; } /* Light Pink */
-footer { background-color: #222; color: white; }
+footer { background-color: #24125a; color: white; }
 .contact-form button:hover {
     background-color: #cc5200;
 }
