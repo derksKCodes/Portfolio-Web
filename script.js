@@ -98,7 +98,7 @@ function fetchAndDisplayTestimonials() {
         .catch(error => {
             console.error("Error fetching testimonials:", error);
             let statusDiv = document.getElementById("submission-status");
-            statusDiv.textContent = "Failed to submit testimonial: " + error.message;
+            statusDiv.textContent = "Failed to  fetch testimonial: " + error.message;
             statusDiv.className = "error";
         
         });
