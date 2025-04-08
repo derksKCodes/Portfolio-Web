@@ -97,7 +97,10 @@ function fetchAndDisplayTestimonials() {
         })
         .catch(error => {
             console.error("Error fetching testimonials:", error);
-            alert("Failed to load testimonials: " + error.message);
+            let statusDiv = document.getElementById("submission-status");
+            statusDiv.textContent = "Failed to submit testimonial: " + error.message;
+            statusDiv.className = "error";
+        
         });
 }
 
