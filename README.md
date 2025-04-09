@@ -1,67 +1,75 @@
-🌐 Portfolio Web 💼
+# Portfolio-Web
+================
+# 🌐 Portfolio Web 💼
+
 Showcasing my skills, experience & passion for development
 
-✨ Overview
-Welcome to my personal portfolio website — a digital hub that highlights my skills, projects, and services as a passionate web developer. This platform is crafted not just to display my work but to inspire confidence in potential employers and clients.
+## 🧭 Overview
 
-🚀 Features
-🔹 Home – A warm welcome with quick access to social profiles.
-🔹 About – Insight into my background, education, and skillset.
-🔹 Services – What I offer: from website development to debugging and consulting.
-🔹 Projects – A showcase of my recent work with live links and descriptions.
-🔹 Testimonials – What clients and collaborators have to say.
-🔹 GitHub Integration – Connects directly to my open-source projects.
-🔹 Contact – Easy ways to reach me via a form or direct links.
+This portfolio website showcases my skills, projects, and experience as a web developer. It's designed to provide a comprehensive view of my abilities and make it easy for potential employers or clients to get in touch.
 
-🖼️ Visual Preview
-🏠 Home
+## ✨ Features
+
+* **Home:** Introduces me and provides links to my social media.
+* **About:** Details my skills and education.
+* **Services:** Lists the services I offer.
+* **Projects:** Showcases my projects with descriptions and links.
+* **Testimonials:** Displays testimonials from satisfied clients.
+* **GitHub:** Links to my GitHub profile.
+* **Contact:** Provides a form and contact information for getting in touch.
+
+## 🖼️ Screenshots
+
+### 🏠 Home Section
 
 ![Home Section](images/repo_screenshoots/home.png)
 
-👤 About Me
+### 👤 About Section
 
 ![About Section](images/repo_screenshoots/about1.png)
 ![About Section](images/repo_screenshoots/about2.png)
 
-
-🛠️ Services
+### 🛠️ Services Section
 
 ![Services Section](images/repo_screenshoots/services.png)
 
-📂 Projects
+### 📂 Projects Section
 
 ![Projects Section](images/repo_screenshoots/projects.png)
 
-💻 GitHub Section
+### 💬 Testimonials Section
+
+![Testimonials Section](images/repo_screenshoots/testimonials.png)
+
+### 🧑‍💻 GitHub Section
 
 ![GitHub Section](images/repo_screenshoots/github.png)
 
-
-✉️ Contact
+### ✉️ Contact Section
 
 ![Contact Section](images/repo_screenshoots/contact.png)
 
-
-🔻 Footer
+### 🔻 Footer Section
 
 ![Footer Section](images/repo_screenshoots/footer.png)
 
+## 🧰 Tech Stack
 
-🧰 Tech Stack
-Built with ❤️ using:
-
-* HTML5
-* CSS3
+* HTML
+* CSS
 * JavaScript
+* Font Awesome
 * Python
 * Flask
-* Font Awesome Icons
 
-🙌 Credits
-🖌️ Design: Derricks
-💻 Development: Cypher Jr.
+## 🙌 Credits
 
-📬 Let’s Connect!
-📧 Email: derrick01.dk@gmail.com
-🐙 GitHub: github.com/derksKCodes
-🌐 Portfolio Live: https://derkskcodes.github.io/Portfolio-Web/
+* Design: Derricks
+* Development: Cypher Jr.
+
+## 📬 Let’s Connect!
+
+* 📧 Email: derrick01.dk@gmail.com
+* 🐙 GitHub: github.com/derksKCodes
+* 🌍 Live Portfolio: https://derkskcodes.github.io/Portfolio-Web/
+
