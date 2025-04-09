@@ -12,8 +12,8 @@ CORS(app)  # Enable CORS for all routes
 db_config = {
     "host": "localhost",
     "user": "root",
-    "password": "",
-    "database": "portfolio_db"
+    "password": "delohz.k.01/",
+    "database": "web_portfolio_db"
 }
 
 # Upload folder for profile pictures
@@ -32,26 +32,30 @@ def submit_testimonial():
         cursor = conn.cursor()
 
         name = request.form['name']
+        client_position = request.form['position']
         feedback = request.form['feedback']
         rating = int(request.form['rating'])
         profile_url = "" # Initialize
+        
 
         if 'profile' in request.files:
             profile = request.files['profile']
             if profile and allowed_file(profile.filename):
                 filename = secure_filename(profile.filename)                    
                 profile.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                profile_url = filename  # ✅ Only store the filename in the DB)              
+                profile_url = filename  #  Only store the filename in the DB)   
+                        
 
         cursor.execute(
-            "INSERT INTO testimonials (name, feedback, rating, profile_url_name) VALUES (%s, %s, %s, %s)",
-            (name, feedback, rating, profile_url)
+            "INSERT INTO testimonials (name, client_position, feedback, rating, profile_url_name) VALUES (%s, %s, %s, %s, %s)",
+            (name, client_position, feedback, rating, profile_url)
         )
         conn.commit()
         
         return jsonify({
             "message": "Testimonial submitted successfully!",
             "name": name,
+            "position": client_position,
             "feedback": feedback,
             "rating": rating,
             "profile_image": filename  # this can be null if no file uploaded
@@ -59,6 +63,7 @@ def submit_testimonial():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+        
     finally:
         cursor.close()
         conn.close()
@@ -69,7 +74,7 @@ def get_testimonials():
     try:
         conn = mysql.connector.connect(**db_config)
         cursor = conn.cursor()
-        cursor.execute("SELECT name, feedback, rating, profile_url_name FROM testimonials")
+        cursor.execute("SELECT name, client_position, feedback, rating, profile_url_name FROM testimonials")
         testimonials = cursor.fetchall()
         
         # Format the data to return it in JSON format
@@ -77,9 +82,10 @@ def get_testimonials():
         for testimonial in testimonials:
             response_data.append({
                 "name": testimonial[0],
-                "feedback": testimonial[1],
-                "rating": testimonial[2],
-                "profile_image": testimonial[3] if testimonial[3] else 'https://via.placeholder.com/80'
+                "position": testimonial[1],
+                "feedback": testimonial[2],
+                "rating": testimonial[3],
+                "profile_image": testimonial[4] if testimonial[4] else 'https://via.placeholder.com/80'
             })
 
         return jsonify(response_data), 200
