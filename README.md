@@ -20,22 +20,32 @@ This portfolio website showcases my skills, projects, and experience as a web de
 
 ### Home Section
 
-![Home Section](./screenshots/Screenshot_2025-04-02_212310.jpg)
+![Home Section](images/repo_screenshoots/home.png)
 
 ### About Section
 
-![About Section](./screenshots/Screenshot_2025-04-02_222406.png)
+![About Section](images/repo_screenshoots/about1.png)
+![About Section](images/repo_screenshoots/about2.png)
 
 ### Services Section
 
-![Services Section](./screenshots/Screenshot_2025-04-02_223225.png)
+![Services Section](images/repo_screenshoots/services.png)
 
 ### Projects Section
 
-![Projects Section](./screenshots/Screenshot_2025-04-02_223141.png)
+![Projects Section](images/repo_screenshoots/projects.png)
+
+### GitHub Section
+
+![GitHub Section](images/repo_screenshoots/github.png)
 
 ### Contact Section
-![Contact Section](./screenshots/Screenshot_2025-04-02_232347.png)
+
+![Contact Section](images/repo_screenshoots/contact.png)
+
+### Footer Section
+
+![Footer Section](images/repo_screenshoots/footer.png)
 
 ## Tech Stack
 
@@ -43,6 +53,8 @@ This portfolio website showcases my skills, projects, and experience as a web de
 * CSS
 * JavaScript
 * Font Awesome
+* Python
+* Flask
 
 ## Credits
 
