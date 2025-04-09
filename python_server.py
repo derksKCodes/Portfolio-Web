@@ -12,7 +12,7 @@ CORS(app)  # Enable CORS for all routes
 db_config = {
     "host": "localhost",
     "user": "root",
-    "password": "delohz.k.01/",
+    "password": "",
     "database": "web_portfolio_db"
 }
 
