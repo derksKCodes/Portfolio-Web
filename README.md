@@ -69,7 +69,6 @@ This portfolio website showcases my skills, projects, and experience as a web de
 ## 📬 Let’s Connect!
 
 * 🐙 [GitHub](github.com/derksKCodes)
-* 🌐 [My Portfolio](https://derkskcodes.github.io/Portfolio-Web/)
-* 🔗 [LinkedIn ](https://ke.linkedin.com/in/derks01)
-* 🌍 [Live Portfolio](https://derkskcodes.github.io/Portfolio-Web/)
+* 🔗 [LinkedIn ]([https://ke.linkedin.com/in/derks01](https://ke.linkedin.com/in/derks01?trk=people-guest_people_search-card))
+* 🌍 [My Portfolio](https://derkskcodes.github.io/Portfolio-Web/)
 
